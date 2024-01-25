@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Quiz Matemática</title>
+  </head>
+  <body>
+    <header>
+      <!--Header-->
+      <div class="container">
+        <div class="box__header">
+          <h3>Quiz de Matemática 2024</h3>
+          <div class="box__header-dataHora">
+            <span id="data">99 de dezembro de 9999</span>
+            <span id="hora">99:99:99</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="box_saudacao">
+        <div class="container">
+          <div class="content_saudacao">
+            <div class="saudacao">
+              <span>Saudação</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Box Saudação-->
+      <main>
+        <div class="container">
+          <div class="box__mainxxx">
+            <div class="tabuada">
+              <b>quiz matemática!</b>
+              <div>
+                <input
+                  class="qtaPerg"
+                  type="number"
+                  name="qtaPerg"
+                  id="qtaPerg"
+                  placeholder="Quantas perguntas quer responder?"
+                  required
+                />
+                <button id="gerarQuiz" class="gerarQuiz">gerar</button>
+              </div>
+            </div>
+            <div id="contentTabuada" class="contentTabuada">
+              <!-- <div class="x-larger correta">
+                            <h3>00 + 00</h3> //pergunta
+                            <span></span> //não mexer
+                            <p>000</p> // resultado
+                        </div> -->
+            </div>
+          </div>
+          <div class="btn_riniciar" id="reinicar">
+            <button class="reinicar">Reiniciar</button>
+          </div>
+        </div>
+      </main>
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close" id="closePopup">&times;</span>
+          <p>Conteúdo do Popup</p>
+          <br />
+          <input
+            type="number"
+            name=""
+            id="resPerq"
+            class="resPerq"
+            placeholder="Resposta"
+          />
+          <div class="box_buttons_controle">
+            <button id="btn_popup_resposta" class="btn_popup_resposta">
+              Responder
+            </button>
+            <!-- <button id="btn_popup_cancelar" class="btn_popup_cancelar">Cancelar</button> -->
+          </div>
+        </div>
+      </div>
+      <div id="popupREs" class="popupRes">
+        <div class="popup-content-res">
+          <div class="popup-content-res__header"><b>Resultado Final</b></div>
+          <div class="content-popup-res">
+            <div class="box-content-correta correta">
+              <h4>Resposta Corretas</h4>
+              <h1>10</h1>
+            </div>
+            <div class="box-content-incorreta incorreta">
+              <h4>Resposta Incorretas</h4>
+              <h1>10</h1>
+            </div>
+          </div>
+          <div class="box_nota-final">
+            <div class="apr_rep">
+              <h1>10</h1>
+            </div>
+            <span><b>Nota Final</b></span>
+          </div>
+          <div class="situacaoFinal"></div>
+          <!-- >-->
+          <button class="reinicar" id="reinicar2">Reiniciar</button>
+        </div>
+      </div>
+      <div class="modalInit">
+        <div class="go"></div>
+        <div class="passoOne"></div>
+        <button class="init" id="init">Começar</button>
+      </div>
+      <div class="modalInit_Two">
+        <div class="box_init-Two">
+          <h3>Aqui escolheremos operações Matemáticas Individuais</h3>
+          <p>
+            <b>( 1 )</b> -> Apenas Adição <br />
+            <b>( 2 )</b> -> Apenas Subtração <br />
+            <b>( 3 )</b> -> Apenas Multiplicação <br />
+            <b>( 4 )</b> -> Apenas Divisão <br />
+            <b>( 5 )</b> -> Apemas Soma e Subtração <br />
+            <b>( 6 )</b> -> Apemas Soma, Subtração e Multiplicação<br />
+            <b>( 7 )</b> -> Todas as Operações Matemáticas
+          </p>
+          <div>
+            <input
+              type="number"
+              name="input_QtdRespostaInit"
+              id="input_QtdRespostaInit"
+              class="input_QtdRespostaInit"
+              min="1"
+              max="7"
+            />
+            <button class="btnInit2" id="btnInit2">Proxímo</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="container">
+        <div class="box_footer">
+          <!-- <img src="./assets/img/670020.png" alt=""> -->
+          <span>
+            @Todos os direitos reservado -
+            <img src="./assets/img/670020.png" alt="" />
+            @<b>DevCled85 </b>
+            2024
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="quizMatematica.js"></script>
+  </body>
+</html>

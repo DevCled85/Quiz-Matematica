@@ -1,0 +1,765 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between;  */
+    /* position: relative; */
+}
+
+/* main{
+    height: 100%;
+    flex: 1;
+} */
+
+:root {
+    --bg-principal: purple;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--bg-principal);
+    color: white;
+}
+
+.box__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box__header h3 {
+    width: 300px;
+}
+
+
+.box__header-dataHora {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    font-size: 13px;
+}
+
+.box__header-dataHora span:nth-child(1)::after {
+    content: ' |';
+}
+
+/* div saudação */
+.box_saudacao {
+    width: 100%;
+}
+
+.content_saudacao {
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.saudacao {
+    padding: 3px 10px;
+    font-weight: 400;
+    font-size: 13px;
+    height: 25px;
+    color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 1px 2px 2px rgba(128, 128, 128, 0.329);
+}
+
+.saudacao.dia {
+    background-color: rgb(228, 78, 220);
+}
+
+.saudacao.tarde {
+    background-color: rgb(182, 32, 174);
+}
+
+.saudacao.noite {
+    background-color: rgb(94, 9, 89);
+}
+
+
+/* inicio do main */
+main {
+    width: 100%;
+}
+
+.box__main {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    /* flex-wrap: wrap; */
+    height: 200px;
+    /*> */
+    border: 1px solid;
+    /*> */
+}
+
+.cad_Alunos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(127, 255, 212, 0.2);
+}
+
+.cad_Alunos>div {
+    padding: 10px;
+    color: rgb(1, 44, 30);
+    font-weight: 500;
+    background-color: rgb(127, 255, 212);
+    border-bottom: 3px solid rgb(1, 44, 30);
+}
+
+.view_Alunos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 255, 0.2);
+}
+
+.view_Alunos>div {
+    padding: 10px;
+    color: white;
+    font-weight: 500;
+    background-color: rgba(0, 0, 255, 0.6);
+    border-bottom: 3px solid rgb(1, 44, 30);
+}
+
+
+
+
+/*---------------------------------------------------------------*/
+.box__mainxxx {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 3px solid purple;
+    border-radius: 10px;
+}
+
+.tabuada {
+    width: 100%;
+    color: white;
+    padding: 20px;
+    text-transform: uppercase;
+    background-color: purple;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qtaPerg {
+    width: 250px;
+    padding: 10px;
+    outline: 0;
+}
+
+.gerarQuiz {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    min-width: 100px;
+    border: 0;
+    cursor: pointer;
+}
+
+.contentTabuada {
+    width: 100%;
+    padding: 10px 20px 15px;
+    background-color: rgb(223, 223, 223);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.x-larger {
+    width: 150px;
+    height: 100px;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: rgb(179, 179, 179);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(13, 63, 35);
+    cursor: pointer;
+}
+
+.x-larger>span {
+    font-size: 15px;
+}
+
+.x-larger>p {
+    font-size: 12px;
+}
+
+.correta {
+    background-color: green !important;
+    color: rgb(126, 255, 126);
+}
+
+.correta>span::after {
+    content: '-- Correta! --';
+}
+
+.correta>p::before {
+    content: 'Resultado = ';
+}
+
+.incorreta {
+    background-color: red !important;
+    color: rgb(255, 173, 173);
+}
+
+.incorreta>span::after {
+    content: '-- Incorreta! --';
+}
+
+.incorreta>p::before {
+    content: 'Resultado = ';
+}
+
+/* popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.resPerq {
+    border: 2px solid gray;
+    padding: 20px;
+    width: 150px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: red;
+    line-height: 26px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.box_buttons_controle {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.btn_popup_resposta,
+.btn_popup_cancelar {
+    padding: 10px;
+    width: 75%;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn_popup_resposta {
+    background-color: rgb(14, 14, 168);
+}
+
+.btn_popup_cancelar {
+    background-color: rgb(101, 168, 14);
+}
+
+.popup-content>p {
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* popup do resultado final */
+.popupRes {
+    display: none;
+    /*> */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all .2s;
+    opacity: 0;
+}
+
+.popup-content-res {
+    width: 400px;
+    height: 500px;
+    /*> */
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px gray;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content-res__header {
+    background-color: rgba(128, 128, 128, 0.164);
+    padding: 10px;
+    border-bottom: 3px solid gray;
+}
+
+.content-popup-res {
+    width: 100%;
+    display: flex;
+
+    height: 100px;
+}
+
+.box-content-correta,
+.box-content-incorreta {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_nota-final {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.box_nota-final div.apr_rep>h1 {
+    font-size: 80px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -56%);
+}
+
+.apr {
+    background-color: green !important;
+    color: white;
+}
+
+.apr_rep.apr,
+.apr_rep.rep {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.rep {
+    background-color: red !important;
+    color: white;
+}
+
+.box_nota-final>div {
+    background-color: rgb(226, 226, 226);
+    width: 120px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.box_nota-final>span {
+    position: absolute;
+    bottom: 13px;
+    font-size: 13px;
+    color: white;
+}
+
+.situacaoFinal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.situacaoFinal.aprovado::before {
+    content: 'Aprovado';
+    color: blue;
+    font-size: 70px;
+}
+
+.situacaoFinal.reprovado::before {
+    content: 'Reprovado';
+    color: red;
+    font-size: 65px;
+}
+
+.reinicar {
+    width: 200px;
+    padding: 20px;
+    margin: 20px auto 5px;
+    background-color: rgb(172, 255, 47);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px rgba(128, 128, 128, 0.295);
+    cursor: pointer;
+}
+
+.reinicar:hover {
+    background-color: rgba(172, 255, 47, 0.699);
+}
+
+.btn_riniciar {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+}
+
+
+/*  modal inicial  */
+.modalInit {
+    /*>  */
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    /*> flex*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.go {
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: cursive;
+    transform: translateX(0%);
+    width: 100%;
+    height: 100px;
+    /*100px*/
+    padding: 0px;
+    /*20px*/
+
+    animation: animInitOne 2s ease-in-out;
+}
+
+@keyframes animInitOne {
+    0% {
+        transform: translateX(100%);
+        height: 5px;
+    }
+
+    60% {
+        transform: translateX(0%);
+        height: 5px;
+    }
+
+    100% {
+        height: 100px;
+    }
+}
+
+.go::before {
+    content: 'Vamos começar a estudar?';
+    opacity: 1;
+    animation: animInitGoOne 2s ease-in-out;
+}
+
+@keyframes animInitGoOne {
+    0% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.passoOne {
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    font-size: 18px;
+    font-style: italic;
+    transform: translateX(0%);
+    width: 100%;
+    height: 100px;
+    /*100px*/
+    padding: 0px;
+    /*20px*/
+    opacity: 1;
+
+    animation: animInitTwo 2s ease-in-out;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes animInitTwo {
+    0% {
+        transform: translateX(0%);
+        height: 100px;
+    }
+
+    60% {
+        height: 5px;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        height: 5px;
+    }
+}
+
+.passoOne::before {
+    content: 'Na proxíma tela você escolherá quantas perguntas responderá e pronto! Só gerar o Quiz...';
+    padding: 20px;
+    animation: animInitPassOne 2s ease-in-out;
+}
+
+@keyframes animInitPassOne {
+    0% {
+        opacity: 0;
+    }
+
+    85% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.init {
+    margin: 30px;
+    padding: 20px;
+    width: 250px;
+    height: 100px;
+    font-size: 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: brown;
+    color: white;
+    box-shadow: 1px 2px 4px rgba(128, 128, 128, 0.479);
+    cursor: pointer;
+    opacity: 1;
+    animation: btnInit 3s ease-in-out;
+}
+
+@keyframes btnInit {
+    0% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.init:hover {
+    background-color: blueviolet;
+}
+
+
+/* >Modal 2 */
+.modalInit_Two {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    /*> flex*/
+    justify-content: center;
+    align-items: center;
+}
+
+.box_init-Two {
+    width: 400px;
+    /* height: 300px; */
+    background-color: rgba(128, 128, 128, 0.288);
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    gap: 20px;
+}
+
+.box_init-Two>h3 {
+    font-size: 16px;
+    color: rgb(63, 63, 63);
+}
+
+.box_init-Two>p {
+    font-size: 15px;
+}
+
+.box_init-Two>div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.input_QtdRespostaInit {
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: inset 1px 2px 4px rgba(128, 128, 128, 0.39);
+    outline-color: purple;
+    border: 1px solid purple;
+}
+
+.btnInit2 {
+    padding: 20px;
+    height: 80px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: brown;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.btnInit2:hover {
+    background-color: rgb(209, 66, 66);
+}
+
+
+/* footer */
+footer {
+    width: 100%;
+    background-color: purple;
+    padding: 20px;
+    /* position: fixed;
+    bottom: 0; */
+    /* margin-top: 50px; */
+    margin-top: auto;
+}
+
+
+.box_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-family: cursive;
+    color: white;
+}
+
+.box_footer img {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    /* background-image: url('./assets/img/670020.png'); */
+    background-size: 100%;
+}
+
+main {
+    margin-bottom: 50px;
+}
+
+/* Aqui escolheremos operações Matemáticas Individuais
+    ( 1 ) -> Apenas Adição
+    ( 2 ) -> Apenas Subtração
+    ( 3 ) -> Apenas Multiplicação
+    ( 4 ) -> Apenas Divisão
+    ( 5 ) -> Apemas Soma e Subtração
+    ( 6 ) -> Apemas Soma, Subtração e Multiplicação
+    ( 7 ) -> Todas as Operações Matemáticas */
